@@ -18,6 +18,7 @@ class NewproductsController < ApplicationController
   # GET /newproducts/1/edit
   def edit
   end
+  
 
   # POST /newproducts or /newproducts.json
   def create

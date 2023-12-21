@@ -1,0 +1,2 @@
+class Allproduct < ApplicationRecord
+end
