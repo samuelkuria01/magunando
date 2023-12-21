@@ -48,7 +48,7 @@ function Home() {
    const handleCategoryClick = (category) => {
       SetSelectedCategory(category)
    }
-   
+
    let displayedProducts;
    if (selectedCategory === 'allproducts') {
      displayedProducts = allProducts;
@@ -125,7 +125,7 @@ function Home() {
                   <div key={product.id}>
                      <div>
                         <Link>
-                        <img src={product.image}></img>
+                        <img alt='maguu' src={product.image}></img>
                         </Link>
                         <div>
                            <h5>{product.name}</h5>
