@@ -92,8 +92,9 @@ Rails.application.configure do
   config.active_record.dump_schema_after_migration = false
 end
 
-
 config.public_file_server.enabled = true
+
 config.public_file_server.static_dirs.tap do |dirs|
-  dirs['magunas_super'] = 'magunas_super/build'
+  dirs['/'] = 'magunas_super/build'
 end
+
