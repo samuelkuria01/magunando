@@ -1,0 +1,2 @@
+class Householdproduct < ApplicationRecord
+end

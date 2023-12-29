@@ -4,7 +4,7 @@ class FoodproductsController < ApplicationController
   # GET /foodproducts or /foodproducts.json
   def index
     @foodproducts = Foodproduct.all
-    render json: @foodproducts
+    
   end
 
   # GET /foodproducts/1 or /foodproducts/1.json
@@ -14,7 +14,6 @@ class FoodproductsController < ApplicationController
   # GET /foodproducts/new
   def new
     @foodproduct = Foodproduct.new
-    render json: @foodproducts
   end
 
   # GET /foodproducts/1/edit
@@ -67,6 +66,6 @@ class FoodproductsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def foodproduct_params
-      params.require(:foodproduct).permit(:name, :image, :price)
+      params.require(:foodproduct).permit(:name, :image, :price, :category)
     end
 end

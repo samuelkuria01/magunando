@@ -1,0 +1,2 @@
+class Vegesproduct < ApplicationRecord
+end

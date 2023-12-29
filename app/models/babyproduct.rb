@@ -1,0 +1,2 @@
+class Babyproduct < ApplicationRecord
+end

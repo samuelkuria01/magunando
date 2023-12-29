@@ -14,6 +14,7 @@ class FoodproductsTest < ApplicationSystemTestCase
     visit foodproducts_url
     click_on "New foodproduct"
 
+    fill_in "Category", with: @foodproduct.category
     fill_in "Image", with: @foodproduct.image
     fill_in "Name", with: @foodproduct.name
     fill_in "Price", with: @foodproduct.price
@@ -27,6 +28,7 @@ class FoodproductsTest < ApplicationSystemTestCase
     visit foodproduct_url(@foodproduct)
     click_on "Edit this foodproduct", match: :first
 
+    fill_in "Category", with: @foodproduct.category
     fill_in "Image", with: @foodproduct.image
     fill_in "Name", with: @foodproduct.name
     fill_in "Price", with: @foodproduct.price

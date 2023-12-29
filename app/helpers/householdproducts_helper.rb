@@ -1,0 +1,2 @@
+module HouseholdproductsHelper
+end

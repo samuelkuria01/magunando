@@ -10,38 +10,60 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_12_20_044911) do
+ActiveRecord::Schema[7.0].define(version: 2023_12_28_134836) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "allproducts", force: :cascade do |t|
+  create_table "babyproducts", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.integer "price"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "alls", force: :cascade do |t|
-    t.string "image"
+  create_table "bevaragesproducts", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.integer "price"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "foodproducts", force: :cascade do |t|
+  create_table "cosmeticsproducts", force: :cascade do |t|
     t.string "name"
     t.string "image"
     t.integer "price"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "newproducts", force: :cascade do |t|
-    t.string "image"
+  create_table "foodyproducts", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.integer "price"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "householdproducts", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "price"
+    t.string "category"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "vegesproducts", force: :cascade do |t|
+    t.string "name"
+    t.string "image"
+    t.integer "price"
+    t.string "category"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

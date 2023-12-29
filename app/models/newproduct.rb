@@ -1,2 +1,0 @@
-class Newproduct < ApplicationRecord
-end

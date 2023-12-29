@@ -1,0 +1,2 @@
+class Cosmeticsproduct < ApplicationRecord
+end

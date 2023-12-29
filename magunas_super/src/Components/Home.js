@@ -1,64 +1,5 @@
-import React, { useState,useEffect } from 'react'
 import { Link } from 'react-router-dom'
 function Home() {
-   const [ allProducts, setAllProducts] = useState([])
-   const [ foodProducts, setFoodProducts] = useState([])
-   const [selectedCategory, SetSelectedCategory] = useState('all')
-   const [error,setError] = useState(false)
-   const [isLoading,setIsLoading] = useState(false)
-
-
-   useEffect(() => {
-      const fetchData = async () => {
-        try {
-          const [allResponse, foodResponse] = await Promise.all([
-            fetch('http://localhost:3000/allproducts'),
-            fetch('http://localhost:3000/foodproducts'),
-          ]);
-    
-          if (!allResponse.ok || !foodResponse.ok) {
-            throw new Error(`Error fetching data. Status: ${allResponse.status}, ${foodResponse.status}`);
-          }
-    
-          const allData = await allResponse.json();
-          const foodData = await foodResponse.json();
-    
-          setAllProducts(allData);
-          setFoodProducts(foodData);
-          setIsLoading(false);
-        } catch (e) {
-          console.error(e);
-          setError(e.message);
-          setIsLoading(false);
-        }
-      };
-    
-      fetchData();
-    }, []);
-
-   if (isLoading) {
-      return <div>Loading...</div>;
-    }
-  
-    if (error) {
-      return <div>Error: {error}</div>;
-    }
-
-
-   const handleCategoryClick = (category) => {
-      SetSelectedCategory(category)
-   }
-
-   let displayedProducts;
-   if (selectedCategory === 'allproducts') {
-     displayedProducts = allProducts;
-   } else if (selectedCategory === 'foodproduct') {
-     displayedProducts = foodProducts;
-   } else {
-     // Default to displaying all products when selected category is 'all' or any other unknown category
-     displayedProducts = [...allProducts, ...foodProducts];
-   }
-   
    
 
 
@@ -86,40 +27,40 @@ function Home() {
         </div>
 
         <div className='homebox2'>
-            <button onClick={() => handleCategoryClick('all')}>
-               <Link> All</Link>
+            <button>
+               <Link to='category/allproducts'> All</Link>
             </button>
             
 
-            <button onClick={() => handleCategoryClick('foodproduct')}>
-               <Link>Food Products</Link>
+            <button >
+               <Link to='category/foodyproducts'>Food Products</Link>
             </button>
 
-            <button onClick={() => handleCategoryClick('fruitsveges')}>
-               <Link> Fruits & Veges</Link>
+            <button >
+               <Link to='category/vegesproducts'> Fruits & Veges</Link>
             </button>
 
-            <button onClick={() => handleCategoryClick('beverages')}>
-               <Link> Beverages</Link>
+            <button >
+               <Link to='category/bevaragesproducts'> Beverages</Link>
             </button>
 
-            <button onClick={() => handleCategoryClick('cleaninghouseholds')}>
-               <Link> Cleaning & Households</Link>
+            <button>
+               <Link to='category/households'> Cleaning & Households</Link>
             </button>
 
-            <button onClick={() => handleCategoryClick('babyproducts')}>
-               <Link> Baby Products</Link>
+            <button>
+               <Link to='category/babyproducts'> Baby Products</Link>
             </button>
 
-            <button onClick={() => handleCategoryClick('beautycosmetics')}>
-               <Link>Beauty & Cosmetics</Link>
+            <button>
+               <Link to='category/cosmetics'>Beauty & Cosmetics</Link>
             </button>
 
             
         </div>
 
 
-        <div className='productcontainer'>
+        {/* <div className='productcontainer'>
             <div>
                {displayedProducts.map((product) =>(
                   <div key={product.id}>
@@ -137,7 +78,7 @@ function Home() {
 
                }
             </div>
-        </div>
+        </div> */}
     </div>
   )
 }
