@@ -215,27 +215,49 @@ function Category() {
 
 
   return (
-    <div>
-      <h2>Category: {categoryName}</h2>
+    <div className='categorycontainer'>
+      <div>
+    
+      </div>
+
+
+      <div>
+        <h2>Top Categories</h2>
+        <div className='sidebarcategory'>
+          <ul>
+            <li>
+              <Link>mambo safi</Link>
+            </li>
+            <li>
+              <Link>mambo safi</Link>
+            </li>
+            <li>
+              <Link>mambo safi</Link>
+            </li>
+            <li>
+              <Link>mambo safi</Link>
+            </li>
+            <li>
+              <Link>mambo safi</Link>
+            </li>
+          </ul>
+        </div>
+        </div>
 
       <div className='productcontainer'>
-        <div>
-       { console.log('Displayed Products:', displayedProducts)};
-
           {displayedProducts.map((product) => (
-            <div key={product.id}>
-              <div>
+            <div className='categorycards' key={product.id}>
+              <div className='catecard-wrapper' >
                 <Link to={`product/${product.id}`}>
                   <img alt='maguu' src={product.image} />
                 </Link>
-                <div>
-                  <h5>{product.name}</h5>
-                  <p>Ksh: {product.price}</p>
+                <div className='producttext'>
+                  <h5 className='productname'>{product.name}</h5>
+                  <p className='pname'>Ksh: {product.price}</p>
                 </div>
               </div>
             </div>
           ))}
-        </div>
       </div>
     </div>
   );
