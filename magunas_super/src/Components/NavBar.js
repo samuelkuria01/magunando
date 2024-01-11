@@ -17,9 +17,6 @@ function NavBar() {
             <i id='magnify' class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
         </div>
         <div className='signcart'>
-         <div>
-
-         </div>
             <div>
                <p></p>
             <button className='signcartbtn'>SignIn</button>
@@ -37,7 +34,7 @@ function NavBar() {
             
 
             <button >
-               <Link to='category/foodyproducts'>Food Products</Link>
+               <Link to='category/freshfoods'>Food Products</Link>
             </button>
 
             <button >
@@ -48,6 +45,9 @@ function NavBar() {
                <Link to='category/bevaragesproducts'> Beverages</Link>
             </button>
 
+            <button>
+               <Link to='category/liquor'> liquor</Link>
+            </button>
             <button>
                <Link to='category/households'> Cleaning & Households</Link>
             </button>

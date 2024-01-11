@@ -140,7 +140,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 function Category() {
-  const { categoryName } = useParams();
+  const { categoryName} = useParams();
   const [products, setProducts] = useState([]);
   const [error, setError] = useState(false);
   const [displayedProducts, setDisplayedProducts] = useState([]);
@@ -150,7 +150,7 @@ function Category() {
     const fetchData = async () => {
       try {
         // Replace the URL with your API endpoint
-        const response = await fetch(`http://localhost:3000/${categoryName}`);
+        const response = await fetch(`http://localhost:3000/category/${categoryName}`);
         if (!response.ok) {
           throw new Error(`Error fetching data. Status: ${response.status}`);
         }
@@ -216,31 +216,15 @@ function Category() {
 
   return (
     <div className='categorycontainer'>
-      <div>
-    
-      </div>
-
-
-      <div>
-        <h2>Top Categories</h2>
-        <div className='sidebarcategory'>
-          <ul>
-            <li>
-              <Link>mambo safi</Link>
-            </li>
-            <li>
-              <Link>mambo safi</Link>
-            </li>
-            <li>
-              <Link>mambo safi</Link>
-            </li>
-            <li>
-              <Link>mambo safi</Link>
-            </li>
-            <li>
-              <Link>mambo safi</Link>
-            </li>
-          </ul>
+        <div className='categoryheader'>
+        <h2>{categoryName}</h2>
+        <div className='searchcont'>
+            <input 
+            type="text"
+            placeholder='Search...'
+            className='search-input'
+            ></input>
+            <i id='magnify' class="fa-solid fa-magnifying-glass fa-beat-fade"></i>
         </div>
         </div>
 
@@ -248,7 +232,7 @@ function Category() {
           {displayedProducts.map((product) => (
             <div className='categorycards' key={product.id}>
               <div className='catecard-wrapper' >
-                <Link to={`product/${product.id}`}>
+                <Link to={`/category/${categoryName}/${product.id}`}>
                   <img alt='maguu' src={product.image} />
                 </Link>
                 <div className='producttext'>
