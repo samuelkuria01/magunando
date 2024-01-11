@@ -150,7 +150,7 @@ function Category() {
     const fetchData = async () => {
       try {
         // Replace the URL with your API endpoint
-        const response = await fetch(`http://localhost:3000/category/${categoryName}`);
+        const response = await fetch(`http://localhost:3000/categories_with_products?category_name=${categoryName}`);
         if (!response.ok) {
           throw new Error(`Error fetching data. Status: ${response.status}`);
         }

@@ -25,6 +25,13 @@ Rails.application.routes.draw do
   resources :bevaragesproducts, path: 'category/bevaragesproducts' do
     resources :products, only: [:show], controller: 'products'
   end
+
+  resources :products, only: [:index, :show]
+
+  get '/categories_with_products/:category_name', to: 'products#categories_with_products'
+  get '/categories_with_products/:category_name/:product_id', to: 'products#categories_with_products'
+
+
   
 
   get '/category/:category_name/:product_id', to: 'products#show'
